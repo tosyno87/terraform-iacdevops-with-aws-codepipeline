@@ -18,4 +18,7 @@ instance_keypair = "test_key"
 private_instance_count = 2
 
 # DNS Name
-dns_name = "devdemo5.obatos.de"
+dns_name = "stagedemo5.obatos.de"
+
+
+
