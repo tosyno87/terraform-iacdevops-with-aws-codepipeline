@@ -1,6 +1,6 @@
 module "acm" {
   source  = "terraform-aws-modules/acm/aws"
-  version = "4.2.0"
+  version = "3.0.0"
 
   domain_name = trimsuffix(data.aws_route53_zone.my_domain.name, ".")
   zone_id     = data.aws_route53_zone.my_domain.zone_id
