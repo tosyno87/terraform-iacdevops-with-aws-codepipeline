@@ -2,11 +2,11 @@
 resource "aws_autoscaling_group" "my_asg" {
   #name_prefix      = "myasg-"
   name_prefix = "${local.name}-"
-  #desired_capacity = 2
+  desired_capacity = 2
   max_size         = 10
-  #min_size         = 2
-  desired_capacity = 4
-  min_size = 4
+  min_size         = 2
+  #desired_capacity = 4
+  #min_size = 4
   vpc_zone_identifier  = module.vpc.private_subnets
   #vpc_zone_identifier = data.terraform_remote_state.vpc.outputs.private_subnets
   /*[
