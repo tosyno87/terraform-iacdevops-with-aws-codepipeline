@@ -14,8 +14,6 @@ module "private_security_group" {
   #ingress_cidr_blocks = [data.terraform_remote_state.vpc.outputs.vpc_cidr_block]
   # Egress Rule - all-all open
   egress_rules = ["all-all"]
-  tags = {
-    Name = "Private_SG"
-  }
+  tags = local.common_tags
 }
 

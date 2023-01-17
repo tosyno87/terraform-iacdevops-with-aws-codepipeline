@@ -2,11 +2,9 @@
 # Resource - depends_on Meta-Argument
 
 resource "aws_eip" "bastion_eip" {
-  depends_on = [module.ec2_public]
+  depends_on = [module.ec2_public, module.vpc ]
   instance   = module.ec2_public.id
   vpc        = true
-  tags = {
-    Name = "my-bastion-eip"
-  }
+  tags = local.common_tags
 }
 

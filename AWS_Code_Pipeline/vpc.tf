@@ -4,7 +4,7 @@ module "vpc" {
   #source = "../../modules:aws-vpc"
   version = "3.18.1"
 
-  name = "my-vpc2"
+  name = "${local.name}-${var.vpc_name}"
   cidr = var.vpc_cidr_block
 
   azs             = var.vpc_availability_zones
@@ -22,23 +22,18 @@ module "vpc" {
   enable_dns_support   = true
 
   public_subnet_tags = {
-    Name = "public-subnets"
+    type = "public-subnets"
   }
   private_subnet_tags = {
-    Name = "private-subnets"
+    type = "private-subnets"
   }
 
   database_subnet_tags = {
-    Name = "database-subnets"
+    type = "database-subnets"
   }
-  tags = {
-    Owner       = "Obatos"
-    Environment = "dev"
-  }
+  tags = local.common_tags
 
-  vpc_tags = {
-    Name = "vpc-dev"
-  }
+  vpc_tags = local.common_tags
 
 
 

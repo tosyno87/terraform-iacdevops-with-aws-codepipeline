@@ -12,8 +12,6 @@ module "public_bastion_sg" {
   ingress_cidr_blocks = ["0.0.0.0/0"]
   # Egress Rule - all-all open
   egress_rules = ["all-all"]
-  tags = {
-    Name = "Public_Bastion"
-  }
+  tags = local.common_tags
 }
 
