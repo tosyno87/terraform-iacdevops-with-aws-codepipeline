@@ -18,7 +18,7 @@ resource "null_resource" "name" {
   ## Remote Exec Provisioner: Using remote-exec provisioner fix the private key permissions on Bastion Host
   provisioner "remote-exec" {
     inline = [
-      "sudo chmod 777 /tmp/test_key.pem"
+      "sudo chmod 400 /tmp/test_key.pem"
     ]
   }
   /*
